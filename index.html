@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotionFoundry | Creative Production</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--dark:#041F1C;
+--dark2:#0B2A27;
+--light:#F4F1EB;
+--light2:#ECE7DD;
+--gold:#C99A2E;
+--cream:#FAF8F3;
+--line:rgba(4,31,28,.12);
+--muted:rgba(4,31,28,.72);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:var(--light);
+font-family:"DM Sans",sans-serif;
+color:var(--dark);
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+
+.container{
+width:min(1450px,calc(100% - 70px));
+margin:auto;
+}
+
+header{
+height:96px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid var(--line);
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+letter-spacing:-0.08em;
+line-height:.9;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+.logo-sub{
+font-size:10px;
+letter-spacing:.28em;
+margin-top:8px;
+font-weight:700;
+color:var(--gold);
+text-transform:uppercase;
+}
+
+nav{
+display:flex;
+gap:42px;
+font-size:13px;
+font-weight:700;
+text-transform:uppercase;
+}
+
+nav a{
+text-decoration:none;
+color:var(--dark);
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:12px;
+padding:16px 24px;
+border:1px solid var(--gold);
+background:var(--gold);
+font-size:13px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:-0.02em;
+text-decoration:none;
+color:var(--dark);
+transition:.3s ease;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.btn-outline{
+background:transparent;
+border:1px solid var(--line);
+}
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+padding:70px 0;
+align-items:center;
+}
+
+.eyebrow{
+font-size:12px;
+font-weight:800;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:28px;
+}
+
+h1{
+font-size:clamp(76px,8vw,150px);
+line-height:.84;
+letter-spacing:-0.1em;
+font-weight:900;
+max-width:760px;
+}
+
+.serif{
+font-family:"Playfair Display",serif;
+font-style:italic;
+font-weight:500;
+letter-spacing:-0.04em;
+}
+
+.hero-copy{
+margin-top:34px;
+max-width:620px;
+font-size:24px;
+line-height:1.42;
+letter-spacing:-0.05em;
+color:var(--muted);
+}
+
+.hero-actions{
+display:flex;
+gap:18px;
+margin-top:42px;
+flex-wrap:wrap;
+}
+
+.mockups{
+height:700px;
+position:relative;
+}
+
+.card{
+position:absolute;
+border-radius:6px;
+overflow:hidden;
+background:
+linear-gradient(145deg,rgba(4,31,28,.1),rgba(4,31,28,.75)),
+radial-gradient(circle at 70% 20%,rgba(201,154,46,.8),transparent 25%),
+linear-gradient(120deg,#d7ccb8,#35534d 50%,#041F1C);
+box-shadow:0 30px 80px rgba(4,31,28,.16);
+}
+
+.phone{
+width:290px;
+height:590px;
+left:34%;
+top:0;
+border:10px solid #071815;
+border-radius:38px;
+z-index:5;
+}
+
+.phone:before{
+content:"";
+position:absolute;
+top:8px;
+left:50%;
+transform:translateX(-50%);
+width:95px;
+height:24px;
+background:#071815;
+border-radius:0 0 18px 18px;
+}
+
+.card1{
+width:220px;
+height:320px;
+left:4%;
+top:100px;
+}
+
+.card2{
+width:220px;
+height:320px;
+right:4%;
+top:60px;
+}
+
+.card3{
+width:230px;
+height:250px;
+right:18%;
+bottom:30px;
+}
+
+.card4{
+width:190px;
+height:300px;
+right:-2%;
+bottom:90px;
+background:
+linear-gradient(145deg,#f2ece1,#cfc1ab);
+}
+
+.overlay{
+position:absolute;
+left:24px;
+right:24px;
+bottom:24px;
+color:white;
+}
+
+.overlay h3{
+font-size:50px;
+line-height:.9;
+letter-spacing:-0.08em;
+}
+
+.overlay small{
+display:block;
+margin-top:14px;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.05em;
+}
+
+.logos{
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+padding:28px 0;
+}
+
+.logo-grid{
+display:grid;
+grid-template-columns:1.2fr repeat(6,1fr);
+align-items:center;
+gap:30px;
+}
+
+.trust{
+font-size:12px;
+line-height:1.4;
+font-weight:800;
+letter-spacing:.05em;
+text-transform:uppercase;
+}
+
+.client{
+font-size:30px;
+font-weight:900;
+letter-spacing:-0.07em;
+text-align:center;
+opacity:.85;
+}
+
+.dark{
+background:var(--dark);
+color:var(--cream);
+padding:90px 0;
+margin-top:0;
+}
+
+.services{
+display:grid;
+grid-template-columns:1.2fr repeat(5,1fr);
+gap:40px;
+}
+
+.section-title{
+font-size:64px;
+line-height:.95;
+letter-spacing:-0.09em;
+font-weight:850;
+max-width:420px;
+}
+
+.service{
+padding-left:24px;
+border-left:1px solid rgba(255,255,255,.14);
+}
+
+.service-icon{
+width:40px;
+height:40px;
+border:1px solid var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:22px;
+color:var(--gold);
+}
+
+.service h3{
+font-size:18px;
+margin-bottom:12px;
+letter-spacing:-0.04em;
+}
+
+.service p{
+font-size:14px;
+line-height:1.6;
+opacity:.72;
+}
+
+.work{
+padding:90px 0;
+}
+
+.work-grid{
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:60px;
+}
+
+.work-cards{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+}
+
+.work-card{
+position:relative;
+height:340px;
+border-radius:6px;
+overflow:hidden;
+background:
+linear-gradient(145deg,rgba(4,31,28,.1),rgba(4,31,28,.8)),
+radial-gradient(circle at 60% 20%,rgba(201,154,46,.7),transparent 25%),
+linear-gradient(120deg,#c9bca5,#314943 50%,#041F1C);
+box-shadow:0 18px 40px rgba(4,31,28,.12);
+}
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:54px;
+height:54px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.9);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+backdrop-filter:blur(6px);
+}
+
+.work-copy{
+position:absolute;
+left:18px;
+right:18px;
+bottom:18px;
+color:white;
+}
+
+.work-copy h3{
+font-size:20px;
+line-height:1;
+letter-spacing:-0.05em;
+margin-bottom:8px;
+}
+
+.work-copy p{
+font-size:12px;
+opacity:.78;
+}
+
+.process{
+border-top:1px solid var(--line);
+padding:90px 0;
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:60px;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:32px;
+}
+
+.step-number{
+font-size:36px;
+font-weight:700;
+letter-spacing:-0.08em;
+margin-bottom:20px;
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.step-number:after{
+content:"";
+height:1px;
+flex:1;
+background:var(--gold);
+opacity:.6;
+}
+
+.step h3{
+font-size:17px;
+margin-bottom:10px;
+}
+
+.step p{
+font-size:14px;
+line-height:1.6;
+color:var(--muted);
+}
+
+.cta{
+background:var(--dark);
+color:var(--cream);
+padding:100px 0 40px;
+}
+
+.cta-inner{
+display:grid;
+grid-template-columns:2fr 1fr 220px;
+gap:40px;
+align-items:center;
+padding-bottom:60px;
+border-bottom:1px solid rgba(255,255,255,.14);
+}
+
+.cta h2{
+font-size:74px;
+line-height:.92;
+letter-spacing:-0.08em;
+}
+
+.cta p{
+font-size:16px;
+line-height:1.6;
+opacity:.72;
+}
+
+footer{
+padding:40px 0 10px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:60px;
+color:rgba(255,255,255,.72);
+}
+
+.footer-logo{
+font-size:28px;
+font-weight:900;
+letter-spacing:-0.08em;
+margin-bottom:14px;
+}
+
+.footer-links{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.footer-links strong{
+display:block;
+margin-bottom:14px;
+color:var(--gold);
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em;
+}
+
+.footer-links a{
+display:block;
+margin-bottom:10px;
+text-decoration:none;
+color:rgba(255,255,255,.72);
+}
+
+.bottom{
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.14);
+display:flex;
+justify-content:space-between;
+font-size:12px;
+color:rgba(255,255,255,.5);
+}
+
+@media(max-width:1100px){
+
+.hero,
+.services,
+.work-grid,
+.process-grid,
+.cta-inner,
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.work-cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.logo-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.trust{
+grid-column:1/-1;
+}
+
+nav{
+display:none;
+}
+}
+
+@media(max-width:700px){
+
+.container{
+width:min(100% - 36px,1450px);
+}
+
+h1{
+font-size:62px;
+}
+
+.mockups{
+transform:scale(.84);
+transform-origin:top center;
+height:580px;
+}
+
+.work-cards,
+.steps,
+.footer-links{
+grid-template-columns:1fr;
+}
+
+.logo-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.services{
+grid-template-columns:1fr;
+}
+
+.service{
+border-left:0;
+padding-left:0;
+padding-top:24px;
+border-top:1px solid rgba(255,255,255,.12);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="container">
+
+<div>
+<div class="logo">MOTION<span>FOUNDRY</span></div>
+<div class="logo-sub">Creative Production</div>
+</div>
+
+<nav>
+<a href="#">Work</a>
+<a href="#">Services</a>
+<a href="#">Process</a>
+<a href="#">About</a>
+<a href="#">Resources</a>
+</nav>
+
+<a href="#" class="btn btn-outline">Let's Talk →</a>
+
+</header>
+
+<section class="hero container">
+
+<div>
+
+<div class="eyebrow">Creative Production</div>
+
+<h1>
+Motion-led creative for <span class="serif">modern</span> campaigns.
+</h1>
+
+<p class="hero-copy">
+We create high-impact assets for paid social, display and digital campaigns — designed to scale across every platform and format.
+</p>
+
+<div class="hero-actions">
+<a href="#" class="btn">View Work →</a>
+<a href="#" class="btn btn-outline">Showreel →</a>
+</div>
+
+</div>
+
+<div class="mockups">
+
+<div class="card card1"></div>
+
+<div class="card phone">
+<div class="overlay">
+<h3>Move with <span class="serif" style="color:#C99A2E;">purpose.</span></h3>
+<small>+62% ROAS · -28% CPA</small>
+</div>
+</div>
+
+<div class="card card2"></div>
+<div class="card card3"></div>
+<div class="card card4"></div>
+
+</div>
+
+</section>
+
+<section class="logos">
+
+<div class="container logo-grid">
+
+<div class="trust">
+Trusted by brands<br>and agencies
+</div>
+
+<div class="client">AVIVA</div>
+<div class="client">ELSEVIER</div>
+<div class="client">LNER</div>
+<div class="client">HSBC</div>
+<div class="client">BUPA</div>
+<div class="client">RAF</div>
+
+</div>
+
+</section>
+
+<section class="dark">
+
+<div class="container services">
+
+<div>
+<div class="eyebrow">What We Do</div>
+<h2 class="section-title">
+Creative built for every digital touchpoint.
+</h2>
+</div>
+
+<div class="service">
+<div class="service-icon">▷</div>
+<h3>Paid Social</h3>
+<p>Platform-native creative for Meta, LinkedIn, TikTok and YouTube.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">♡</div>
+<h3>Organic Social</h3>
+<p>Motion-led content designed for modern social channels.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">▦</div>
+<h3>Display & HTML5</h3>
+<p>Animated display assets built for every format and spec.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">▱</div>
+<h3>Campaign Adaptation</h3>
+<p>From master creative to multi-format rollout and optimisation.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">T</div>
+<h3>Motion Graphics</h3>
+<p>Branded animation, explainers and key messaging brought to life.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="work container">
+
+<div class="work-grid">
+
+<div>
+<div class="eyebrow">Our Work</div>
+<h2 class="section-title">
+Work that moves brands forward.
+</h2>
+</div>
+
+<div class="work-cards">
+
+<div class="work-card">
+<div class="play">▶</div>
+<div class="work-copy">
+<h3>Broker Matching</h3>
+<p>Paid Social</p>
+</div>
+</div>
+
+<div class="work-card">
+<div class="play">▶</div>
+<div class="work-copy">
+<h3>Workplace Story</h3>
+<p>Social Video</p>
+</div>
+</div>
+
+<div class="work-card">
+<div class="play">▶</div>
+<div class="work-copy">
+<h3>Digital Tax</h3>
+<p>Display / HTML5</p>
+</div>
+</div>
+
+<div class="work-card">
+<div class="play">▶</div>
+<div class="work-copy">
+<h3>OneApp Launch</h3>
+<p>Product Launch</p>
+</div>
+</div>
+
+<div class="work-card">
+<div class="play">▶</div>
+<div class="work-copy">
+<h3>Protection Podcast</h3>
+<p>Social Promo</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="process container">
+
+<div class="process-grid">
+
+<div>
+<div class="eyebrow">Our Process</div>
+<h2 class="section-title">
+A process built for speed and quality.
+</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">01</div>
+<h3>Brief</h3>
+<p>We get to know your objectives, audience and requirements.</p>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<h3>Concept</h3>
+<p>Ideas, treatments and storyboards to shape the right approach.</p>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<h3>Create</h3>
+<p>High-quality assets produced with precision and creativity.</p>
+</div>
+
+<div class="step">
+<div class="step-number">04</div>
+<h3>Refine</h3>
+<p>Collaborative feedback and amends to get everything right.</p>
+</div>
+
+<div class="step">
+<div class="step-number">05</div>
+<h3>Deliver</h3>
+<p>Platform-ready files, on time, every time.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-inner">
+
+<h2>
+Ready to create what <span class="serif" style="color:#C99A2E;">moves</span> people?
+</h2>
+
+<p>
+Let's build high-impact creative for your next campaign.
+</p>
+
+<a href="#" class="btn">Let's Talk →</a>
+
+</div>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">MOTION<span style="color:#C99A2E;">FOUNDRY</span></div>
+<p>
+Motion-led creative for digital campaigns.<br>
+Built for every platform, every format, every time.
+</p>
+</div>
+
+<div class="footer-links">
+
+<div>
+<strong>Navigation</strong>
+<a href="#">Work</a>
+<a href="#">Services</a>
+<a href="#">Process</a>
+</div>
+
+<div>
+<strong>Company</strong>
+<a href="#">About</a>
+<a href="#">Resources</a>
+<a href="#">Contact</a>
+</div>
+
+<div>
+<strong>Services</strong>
+<a href="#">Paid Social</a>
+<a href="#">Organic Social</a>
+<a href="#">Display & HTML5</a>
+</div>
+
+<div>
+<strong>Follow</strong>
+<a href="#">LinkedIn</a>
+<a href="#">Instagram</a>
+<a href="#">Vimeo</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom">
+<div>© MotionFoundry Studio 2026</div>
+<div>hello@motionfoundrystudio.com</div>
+</div>
+
+</footer>
+
+</div>
+
+</section>
+
+</body>
+</html>
