@@ -145,7 +145,8 @@ h1 span:after{display:none}
 .hl-pen.hl-2:before{rotate:.8deg;left:.1em;right:-.15em}
 .js .hl-pen:before{scale:0 1;transition:scale .55s cubic-bezier(.7,0,.25,1) .25s}
 .js .hl-pen.hl-2:before{transition-delay:.7s}
-.js.loaded .hl-pen:before{scale:1 1}
+.js.loaded .hero .hl-pen:before{scale:1 1}
+.js .in-view .hl-pen:before,.js .in-view.hl-pen:before{scale:1 1}
 @media (prefers-reduced-motion: reduce){.js .hl-pen:before{scale:1 1;transition:none}}
 
 /* ---------- hero headline: tighter, heavier (Inter Tight Black, self-hosted, OFL) ---------- */
