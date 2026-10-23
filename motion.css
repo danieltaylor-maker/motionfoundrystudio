@@ -96,7 +96,7 @@
 
 /* ---------- hand-drawn underline under "Extra hands." draws in on load ---------- */
 h1 span:after{display:none}
-.hand-underline{position:absolute;right:-.06em;bottom:-.17em;width:62%;height:auto;overflow:visible;pointer-events:none}
+.hand-underline{position:absolute;right:-.06em;bottom:-.04em;width:62%;height:auto;overflow:visible;pointer-events:none}
 .hand-underline path{fill:none;stroke:#ffdb34;stroke-linecap:round;stroke-linejoin:round}
 .hand-underline .u1{stroke-width:7}
 .hand-underline .u2{stroke-width:4;opacity:.85}
