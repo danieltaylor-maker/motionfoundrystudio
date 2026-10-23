@@ -152,3 +152,11 @@ h1 span:after{display:none}
 /* ---------- hero headline: tighter, heavier (Inter Tight Black, self-hosted, OFL) ---------- */
 @font-face{font-family:'Inter Tight';src:url('./assets/fonts/inter-tight-900.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
 .hero h1{font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.045em;line-height:.86;word-spacing:.04em}
+
+/* ---------- secondary (ghost) button ---------- */
+.button.ghost{background:transparent;color:var(--blue);box-shadow:inset 0 0 0 2px var(--blue);transition:background-color .2s ease,color .2s ease}
+.button.ghost:hover,.button.ghost:focus-visible{background:var(--blue);color:#fff;filter:none}
+.button.ghost span{font-size:1.15rem;transition:translate .2s ease}
+.button.ghost:hover span{translate:0 2px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.hero .actions .button{margin-top:0}
