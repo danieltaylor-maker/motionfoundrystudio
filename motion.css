@@ -174,3 +174,6 @@ h1 span:after{display:none}
 .hero .ticks{position:static;display:flex;flex-wrap:wrap;margin:1.6rem 0 0;font-size:.8rem}
 @media(max-width:650px){.hero .ticks{margin:1.1rem 0 0;font-size:.68rem}}
 @media(min-width:651px){.hero .ticks{font-size:.74rem;gap:.55rem}.hero .ticks li{padding:.45rem .8rem .45rem .6rem}}
+
+/* highlighter on dark bands: ink text on the yellow */
+.hl-pen.hl-dark{color:#061722}

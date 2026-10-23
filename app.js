@@ -31,7 +31,7 @@ function getBrief(){const form=$('#brief-form');if(!form.reportValidity())return
   add('.service-grid,.work-grid,.steps,.audience','reveal-stagger');
   window.addEventListener('load',()=>root.classList.add('loaded'));
   setTimeout(()=>root.classList.add('loaded'),1200);
-  const targets=document.querySelectorAll('.reveal,.reveal-stagger,.real-formats');
+  const targets=document.querySelectorAll('.reveal,.reveal-stagger,.real-formats,.hl-pen:not(.hero .hl-pen)');
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){targets.forEach(t=>t.classList.add('in-view'));return;}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}}),{rootMargin:'0px 0px -12% 0px',threshold:.08});
   targets.forEach(t=>io.observe(t));
