@@ -104,3 +104,29 @@ h1 span:after{display:none}
 .js.loaded .hand-underline .u1{stroke-dashoffset:0;transition:stroke-dashoffset .75s cubic-bezier(.6,0,.3,1) .5s}
 .js.loaded .hand-underline .u2{stroke-dashoffset:0;transition:stroke-dashoffset .5s cubic-bezier(.6,0,.3,1) 1.15s}
 @media (prefers-reduced-motion: reduce){.js .hand-underline path{stroke-dashoffset:0;transition:none}}
+
+/* ---------- closing collage: rebuilt as layered graphic ---------- */
+.cl-art{aspect-ratio:435/180;top:2rem}
+@media(max-width:650px){.cl-art{top:0;margin-top:1.6rem}}
+.cl-art>*{position:absolute;margin:0}
+.cl-star{left:1%;top:10%;width:8.5%;animation:mf-spin 12s linear infinite}
+.cl-zig{left:-1%;top:52%;width:6.5%;animation:mf-wiggle 3s ease-in-out infinite}
+.cl-frame{overflow:hidden;box-shadow:0 10px 26px rgba(6,23,34,.22)}
+.cl-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.cl-tablet{left:11%;top:17%;width:40%;height:74%;background:#0b0f14;border-radius:1.1rem;padding:2.4% 2.6%;border:3px solid #fff;rotate:-3deg;z-index:2;animation:mf-float 6.4s ease-in-out -1s infinite}
+.cl-tablet img{border-radius:.45rem}
+.cl-palms{left:43%;top:2%;width:34%;height:48%;border:5px solid #fff;border-radius:.9rem;rotate:4deg;z-index:1;animation:mf-float 7s ease-in-out -3s infinite}
+.cl-arch{left:53%;top:42%;width:27%;height:52%;border:5px solid #fff;border-radius:.9rem;rotate:5deg;z-index:3;animation:mf-float 6s ease-in-out -2s infinite}
+.cl-play{left:50%;top:50%;width:3.2rem;height:3.2rem;margin:-1.6rem 0 0 -1.6rem;border-radius:50%;border:3px solid #fff;background:rgba(6,23,34,.45);position:absolute}
+.cl-play:after{content:'';position:absolute;left:1.2rem;top:.82rem;border-left:1.05rem solid #fff;border-top:.66rem solid transparent;border-bottom:.66rem solid transparent}
+.cl-note{right:0;top:18%;width:21%;color:#061722;rotate:-5deg;animation:mf-rock 4.8s ease-in-out infinite;font-size:0;line-height:0}
+.cl-note .note-svg{display:block;width:100%;height:auto}
+.cl-arrow{right:5%;top:58%;width:8%;overflow:visible}
+.js .cl-arrow path{stroke-dasharray:1 1.2;stroke-dashoffset:1.05}
+.js .in-view .cl-arrow .a1,.js .in-view.closing-inner .cl-arrow .a1{stroke-dashoffset:0;transition:stroke-dashoffset .8s cubic-bezier(.6,0,.3,1) .4s}
+.js .in-view .cl-arrow .a2,.js .in-view.closing-inner .cl-arrow .a2{stroke-dashoffset:0;transition:stroke-dashoffset .35s ease-out 1.15s}
+@media(max-width:650px){.cl-play{width:2.2rem;height:2.2rem;margin:-1.1rem 0 0 -1.1rem;border-width:2px}.cl-play:after{left:.8rem;top:.55rem;border-left-width:.75rem;border-top-width:.48rem;border-bottom-width:.48rem}.cl-palms,.cl-arch{border-width:3px}.cl-tablet{border-radius:.7rem}}
+@media (prefers-reduced-motion: reduce){
+  .cl-star,.cl-zig,.cl-frame,.cl-note{animation:none!important}
+  .js .cl-arrow path{stroke-dashoffset:0;transition:none}
+}
