@@ -22,3 +22,17 @@ document.querySelectorAll('dialog').forEach(d=>{d.querySelector('.close').addEve
 $('.menu').addEventListener('click',()=>{const open=$('.menu').getAttribute('aria-expanded')!=='true';$('.menu').setAttribute('aria-expanded',String(open));$('#nav').classList.toggle('open',open);});
 $('#nav').addEventListener('click',e=>{if(e.target.closest('a')){$('.menu').setAttribute('aria-expanded','false');$('#nav').classList.remove('open');}});
 function getBrief(){const form=$('#brief-form');if(!form.reportValidity())return null;const data=new FormData(form);return `Motion Foundry production brief\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')}\nTeam: ${data.get('team')}\n\nProject\n${data.get('message')}\n`;}
+
+/* ---- animation layer (Claude): scroll reveals + load flag ---- */
+(function(){
+  const root=document.documentElement;
+  const add=(sel,cls)=>document.querySelectorAll(sel).forEach(el=>el.classList.add(cls));
+  add('.services .section-head,.formats,.work .section-head,.how,.proof,.clients,.closing-inner','reveal');
+  add('.service-grid,.work-grid,.steps,.audience','reveal-stagger');
+  window.addEventListener('load',()=>root.classList.add('loaded'));
+  setTimeout(()=>root.classList.add('loaded'),1200);
+  const targets=document.querySelectorAll('.reveal,.reveal-stagger,.real-formats');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){targets.forEach(t=>t.classList.add('in-view'));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}}),{rootMargin:'0px 0px -12% 0px',threshold:.08});
+  targets.forEach(t=>io.observe(t));
+})();
