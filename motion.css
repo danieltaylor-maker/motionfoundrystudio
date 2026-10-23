@@ -46,9 +46,6 @@
 .collage-note{animation:mf-rock 4.5s ease-in-out infinite}
 @keyframes mf-rock{0%,100%{rotate:0deg}50%{rotate:2.5deg}}
 
-/* ---------- yellow underline under "Extra hands." draws in ---------- */
-.js h1 span:after{scale:0 1;transform-origin:left center;transition:scale .9s cubic-bezier(.65,0,.35,1) .6s}
-.js.loaded h1 span:after{scale:1 1}
 
 /* ---------- hero collage: frames float independently ---------- */
 .collage-frame{animation:mf-float 6s ease-in-out infinite}
@@ -84,7 +81,6 @@
   .audience-card:last-child:after,.audience-intro:after,.real-formats:before,
   .collage-note,.collage-frame,.steps li:not(:last-child):after{animation:none!important}
   .js .audience-intro:after,.js .real-formats:before{clip-path:inset(0 0 0 0)}
-  .js h1 span:after{scale:1 1}
   .js .reveal,.js .reveal-stagger>*{opacity:1;translate:0 0}
   .logo-marquee{-webkit-mask-image:none;mask-image:none}
   .logo-track{width:auto}
@@ -97,3 +93,14 @@
 .collage-note{font-size:0;line-height:0;font-style:normal;letter-spacing:0;color:#061722}
 .collage-note .note-svg{display:block;width:8.6rem;height:auto}
 @media(max-width:650px){.collage-note .note-svg{width:5rem}}
+
+/* ---------- hand-drawn underline under "Extra hands." draws in on load ---------- */
+h1 span:after{display:none}
+.hand-underline{position:absolute;right:-.06em;bottom:-.17em;width:62%;height:auto;overflow:visible;pointer-events:none}
+.hand-underline path{fill:none;stroke:#ffdb34;stroke-linecap:round;stroke-linejoin:round}
+.hand-underline .u1{stroke-width:7}
+.hand-underline .u2{stroke-width:4;opacity:.85}
+.js .hand-underline path{stroke-dasharray:1 1.2;stroke-dashoffset:1.05}
+.js.loaded .hand-underline .u1{stroke-dashoffset:0;transition:stroke-dashoffset .75s cubic-bezier(.6,0,.3,1) .5s}
+.js.loaded .hand-underline .u2{stroke-dashoffset:0;transition:stroke-dashoffset .5s cubic-bezier(.6,0,.3,1) 1.15s}
+@media (prefers-reduced-motion: reduce){.js .hand-underline path{stroke-dashoffset:0;transition:none}}
