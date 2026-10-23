@@ -1,1 +1,0 @@
-Full MotionFoundry HTML build with all homepage sections included.
