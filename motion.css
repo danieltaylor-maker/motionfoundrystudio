@@ -138,3 +138,12 @@ h1 span:after{display:none}
 .js.loaded .hero-arrow .a2{stroke-dashoffset:0;transition:stroke-dashoffset .35s ease-out 2.25s}
 @media(max-width:650px){.hero-arrow{width:2.6rem;right:13%;top:27%}}
 @media (prefers-reduced-motion: reduce){.js .hero-arrow path{stroke-dashoffset:0;transition:none}}
+
+/* ---------- highlighter pen over hero eyebrow (brand yellow), swipes on after load ---------- */
+.hl-pen{position:relative;display:inline-block;padding:.12em .4em .1em;margin-left:-.4em;z-index:0}
+.hl-pen:before{content:'';position:absolute;z-index:-1;left:0;right:0;top:.06em;bottom:.02em;background:#ffdb34;border-radius:.35em .55em .4em .6em/.6em .4em .7em .35em;rotate:-1.2deg;opacity:.92;transform-origin:left center}
+.hl-pen.hl-2:before{rotate:.8deg;left:.1em;right:-.15em}
+.js .hl-pen:before{scale:0 1;transition:scale .55s cubic-bezier(.7,0,.25,1) .25s}
+.js .hl-pen.hl-2:before{transition-delay:.7s}
+.js.loaded .hl-pen:before{scale:1 1}
+@media (prefers-reduced-motion: reduce){.js .hl-pen:before{scale:1 1;transition:none}}
