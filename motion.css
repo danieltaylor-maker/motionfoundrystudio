@@ -177,3 +177,6 @@ h1 span:after{display:none}
 
 /* highlighter on dark bands: ink text on the yellow */
 .hl-pen.hl-dark{color:#061722}
+
+/* highlighter on the yellow band: brand pink so it shows */
+.hl-pen.hl-pink:before{background:#ff89cb}
