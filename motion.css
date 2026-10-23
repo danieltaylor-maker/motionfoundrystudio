@@ -91,3 +91,9 @@
   .logo-track .client-logos[aria-hidden="true"]{display:none}
   .clients .client-logos{flex-wrap:wrap;justify-content:center;gap:2rem 3rem;padding:0}
 }
+
+/* ---------- hand-lettered hero note (SVG, Permanent Marker letterforms) ---------- */
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.collage-note{font-size:0;line-height:0;font-style:normal;letter-spacing:0;color:#061722}
+.collage-note .note-svg{display:block;width:8.6rem;height:auto}
+@media(max-width:650px){.collage-note .note-svg{width:5rem}}
