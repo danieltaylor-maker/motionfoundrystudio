@@ -160,3 +160,17 @@ h1 span:after{display:none}
 .button.ghost:hover span{translate:0 2px}
 .hero .actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
 .hero .actions .button{margin-top:0}
+
+/* ---------- hero proof points: boxed chips ---------- */
+.ticks{gap:.7rem;padding:0;margin:0}
+.ticks li{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .95rem .55rem .75rem;background:#fff;border:1.5px solid #061722;border-radius:.6rem;font-weight:600;color:#061722;box-shadow:3px 3px 0 #061722;line-height:1.1}
+.ticks li:before{content:'';flex:none;width:1.1rem;height:1.1rem;margin:0;border-radius:50%;background:#0054ff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4l2.6 2.5L12 5.4' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/80% no-repeat}
+@media(max-width:650px){
+  .ticks{gap:.45rem;justify-content:flex-start;margin:1rem 0 1.5rem}
+  .ticks li{padding:.4rem .6rem .4rem .5rem;gap:.35rem;box-shadow:2px 2px 0 #061722;border-width:1.25px}
+  .ticks li:before{width:.9rem;height:.9rem}
+}
+
+.hero .ticks{position:static;display:flex;flex-wrap:wrap;margin:1.6rem 0 0;font-size:.8rem}
+@media(max-width:650px){.hero .ticks{margin:1.1rem 0 0;font-size:.68rem}}
+@media(min-width:651px){.hero .ticks{font-size:.74rem;gap:.55rem}.hero .ticks li{padding:.45rem .8rem .45rem .6rem}}
