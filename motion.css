@@ -11,11 +11,11 @@
 .logo-marquee:hover .logo-track{animation-play-state:paused}
 .clients .client-logos{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:4.5rem;padding:0 2.25rem;margin:0}
 .clients .client-logos li{flex:0 0 auto;min-width:0}
-.clients .client-logos li img,.clients .client-logos li:nth-child(2) img{width:auto;max-width:none;height:2.4rem;object-fit:contain}
+.clients .client-logos li img,.clients .client-logos li:nth-child(2) img{width:auto;max-width:8.5rem;height:2.4rem;object-fit:contain}
 @keyframes mf-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:650px){
   .clients .client-logos{gap:2.75rem;padding:0 1.375rem}
-  .clients .client-logos li img,.clients .client-logos li:nth-child(2) img{height:1.8rem}
+  .clients .client-logos li img,.clients .client-logos li:nth-child(2) img{height:1.8rem;max-width:6.5rem}
   .logo-track{animation-duration:34s}
 }
 
