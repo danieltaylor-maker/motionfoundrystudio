@@ -147,3 +147,7 @@ h1 span:after{display:none}
 .js .hl-pen.hl-2:before{transition-delay:.7s}
 .js.loaded .hl-pen:before{scale:1 1}
 @media (prefers-reduced-motion: reduce){.js .hl-pen:before{scale:1 1;transition:none}}
+
+/* ---------- hero headline: tighter, heavier (Inter Tight Black, self-hosted, OFL) ---------- */
+@font-face{font-family:'Inter Tight';src:url('./assets/fonts/inter-tight-900.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+.hero h1{font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.045em;line-height:.86;word-spacing:.04em}
