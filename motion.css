@@ -180,3 +180,22 @@ h1 span:after{display:none}
 
 /* highlighter on the yellow band: brand pink so it shows */
 .hl-pen.hl-pink:before{background:#ff89cb}
+
+/* ---------- dark footer ---------- */
+.site-footer.site-footer-dark{background:#061722;color:#d8dde3;padding:3.5rem 0 2rem;font-size:.95rem}
+.site-footer-dark .wrap{display:block}
+.site-footer-dark a{color:#faf7ef}
+.site-footer-dark a:hover{color:#ffdb34}
+.ft-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2rem;align-items:start;padding-bottom:2.5rem;border-bottom:1px solid rgba(250,247,239,.16)}
+.ft-logo img{width:8.5rem;height:auto;display:block}
+.ft-head{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ffdb34;margin:0 0 .8rem}
+.ft-col address{font-style:normal;line-height:1.55}
+.ft-col p{margin:0 0 .6rem}
+.ft-col nav,.ft-col[aria-label]{display:flex;flex-direction:column}
+nav.ft-col{display:flex;flex-direction:column;gap:.45rem}
+nav.ft-col a{text-decoration:none}
+.ft-brief{font:inherit;font-weight:700;color:#061722;background:#ffdb34;border:0;border-radius:6rem;padding:.6rem 1.1rem;cursor:pointer;margin-top:.3rem}
+.ft-brief:hover{background:#fff}
+.ft-legal{padding-top:1.5rem;font-size:.78rem;line-height:1.5;color:#9aa6b2;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.ft-legal p{margin:0;max-width:62ch}
+@media(max-width:650px){.ft-top{grid-template-columns:1fr 1fr;gap:1.8rem 1.2rem}.ft-logo{grid-column:1/-1}.ft-logo img{width:7rem}.site-footer.site-footer-dark{padding-top:2.5rem}}
